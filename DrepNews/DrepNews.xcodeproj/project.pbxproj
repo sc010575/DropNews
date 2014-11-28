@@ -9,12 +9,20 @@
 /* Begin PBXBuildFile section */
 		C533F15A1A276DFC00584E5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1591A276DFC00584E5B /* main.m */; };
 		C533F15D1A276DFC00584E5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F15C1A276DFC00584E5B /* AppDelegate.m */; };
-		C533F1601A276DFC00584E5B /* DrepNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C533F15E1A276DFC00584E5B /* DrepNews.xcdatamodeld */; };
 		C533F1631A276DFC00584E5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1621A276DFC00584E5B /* ViewController.m */; };
 		C533F1661A276DFC00584E5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533F1641A276DFC00584E5B /* Main.storyboard */; };
 		C533F1681A276DFC00584E5B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C533F1671A276DFC00584E5B /* Images.xcassets */; };
 		C533F16B1A276DFC00584E5B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C533F1691A276DFC00584E5B /* LaunchScreen.xib */; };
 		C533F1771A276DFC00584E5B /* DrepNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1761A276DFC00584E5B /* DrepNewsTests.m */; };
+		C533F1A21A27720700584E5B /* Dropbox.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1821A27720700584E5B /* Dropbox.m */; };
+		C533F1A31A27720700584E5B /* OAuthLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1841A27720700584E5B /* OAuthLoginViewController.m */; };
+		C533F1AE1A27720700584E5B /* EventPilot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C533F19A1A27720700584E5B /* EventPilot.xcdatamodeld */; };
+		C533F1B01A27720700584E5B /* DAResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1A01A27720700584E5B /* DAResourceLoader.m */; };
+		C533F1B11A27720700584E5B /* document.json in Resources */ = {isa = PBXBuildFile; fileRef = C533F1A11A27720700584E5B /* document.json */; };
+		C533F1B41A2773C200584E5B /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1B31A2773C200584E5B /* Categories.m */; };
+		C533F1B71A2773C300584E5B /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1B61A2773C300584E5B /* Coordinates.m */; };
+		C533F1BA1A2773C300584E5B /* EventImages.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1B91A2773C300584E5B /* EventImages.m */; };
+		C533F1BD1A2773C300584E5B /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1BC1A2773C300584E5B /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +41,6 @@
 		C533F1591A276DFC00584E5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C533F15B1A276DFC00584E5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C533F15C1A276DFC00584E5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C533F15F1A276DFC00584E5B /* DrepNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrepNews.xcdatamodel; sourceTree = "<group>"; };
 		C533F1611A276DFC00584E5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C533F1621A276DFC00584E5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C533F1651A276DFC00584E5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +49,22 @@
 		C533F1701A276DFC00584E5B /* DrepNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrepNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C533F1751A276DFC00584E5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C533F1761A276DFC00584E5B /* DrepNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrepNewsTests.m; sourceTree = "<group>"; };
+		C533F1811A27720700584E5B /* Dropbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dropbox.h; sourceTree = "<group>"; };
+		C533F1821A27720700584E5B /* Dropbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dropbox.m; sourceTree = "<group>"; };
+		C533F1831A27720700584E5B /* OAuthLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthLoginViewController.h; sourceTree = "<group>"; };
+		C533F1841A27720700584E5B /* OAuthLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthLoginViewController.m; sourceTree = "<group>"; };
+		C533F19B1A27720700584E5B /* EventPilot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventPilot.xcdatamodel; sourceTree = "<group>"; };
+		C533F19F1A27720700584E5B /* DAResourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAResourceLoader.h; sourceTree = "<group>"; };
+		C533F1A01A27720700584E5B /* DAResourceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAResourceLoader.m; sourceTree = "<group>"; };
+		C533F1A11A27720700584E5B /* document.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = document.json; sourceTree = "<group>"; };
+		C533F1B21A2773C200584E5B /* Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
+		C533F1B31A2773C200584E5B /* Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categories.m; sourceTree = "<group>"; };
+		C533F1B51A2773C300584E5B /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
+		C533F1B61A2773C300584E5B /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
+		C533F1B81A2773C300584E5B /* EventImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventImages.h; sourceTree = "<group>"; };
+		C533F1B91A2773C300584E5B /* EventImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventImages.m; sourceTree = "<group>"; };
+		C533F1BB1A2773C300584E5B /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		C533F1BC1A2773C300584E5B /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +106,9 @@
 		C533F1561A276DFC00584E5B /* DrepNews */ = {
 			isa = PBXGroup;
 			children = (
+				C533F1801A27720700584E5B /* DropBox */,
+				C533F1851A27720700584E5B /* Model */,
+				C533F19E1A27720700584E5B /* ResourceLoader */,
 				C533F15B1A276DFC00584E5B /* AppDelegate.h */,
 				C533F15C1A276DFC00584E5B /* AppDelegate.m */,
 				C533F1611A276DFC00584E5B /* ViewController.h */,
@@ -90,7 +116,6 @@
 				C533F1641A276DFC00584E5B /* Main.storyboard */,
 				C533F1671A276DFC00584E5B /* Images.xcassets */,
 				C533F1691A276DFC00584E5B /* LaunchScreen.xib */,
-				C533F15E1A276DFC00584E5B /* DrepNews.xcdatamodeld */,
 				C533F1571A276DFC00584E5B /* Supporting Files */,
 			);
 			path = DrepNews;
@@ -120,6 +145,43 @@
 				C533F1751A276DFC00584E5B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C533F1801A27720700584E5B /* DropBox */ = {
+			isa = PBXGroup;
+			children = (
+				C533F1811A27720700584E5B /* Dropbox.h */,
+				C533F1821A27720700584E5B /* Dropbox.m */,
+				C533F1831A27720700584E5B /* OAuthLoginViewController.h */,
+				C533F1841A27720700584E5B /* OAuthLoginViewController.m */,
+			);
+			path = DropBox;
+			sourceTree = "<group>";
+		};
+		C533F1851A27720700584E5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C533F19A1A27720700584E5B /* EventPilot.xcdatamodeld */,
+				C533F1BB1A2773C300584E5B /* Event.h */,
+				C533F1BC1A2773C300584E5B /* Event.m */,
+				C533F1B81A2773C300584E5B /* EventImages.h */,
+				C533F1B91A2773C300584E5B /* EventImages.m */,
+				C533F1B51A2773C300584E5B /* Coordinates.h */,
+				C533F1B61A2773C300584E5B /* Coordinates.m */,
+				C533F1B21A2773C200584E5B /* Categories.h */,
+				C533F1B31A2773C200584E5B /* Categories.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C533F19E1A27720700584E5B /* ResourceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				C533F19F1A27720700584E5B /* DAResourceLoader.h */,
+				C533F1A01A27720700584E5B /* DAResourceLoader.m */,
+				C533F1A11A27720700584E5B /* document.json */,
+			);
+			path = ResourceLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C533F1B11A27720700584E5B /* document.json in Resources */,
 				C533F1661A276DFC00584E5B /* Main.storyboard in Resources */,
 				C533F16B1A276DFC00584E5B /* LaunchScreen.xib in Resources */,
 				C533F1681A276DFC00584E5B /* Images.xcassets in Resources */,
@@ -222,9 +285,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C533F1BD1A2773C300584E5B /* Event.m in Sources */,
 				C533F15D1A276DFC00584E5B /* AppDelegate.m in Sources */,
-				C533F1601A276DFC00584E5B /* DrepNews.xcdatamodeld in Sources */,
 				C533F1631A276DFC00584E5B /* ViewController.m in Sources */,
+				C533F1AE1A27720700584E5B /* EventPilot.xcdatamodeld in Sources */,
+				C533F1B71A2773C300584E5B /* Coordinates.m in Sources */,
+				C533F1BA1A2773C300584E5B /* EventImages.m in Sources */,
+				C533F1A21A27720700584E5B /* Dropbox.m in Sources */,
+				C533F1B01A27720700584E5B /* DAResourceLoader.m in Sources */,
+				C533F1B41A2773C200584E5B /* Categories.m in Sources */,
+				C533F1A31A27720700584E5B /* OAuthLoginViewController.m in Sources */,
 				C533F15A1A276DFC00584E5B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,13 +500,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C533F15E1A276DFC00584E5B /* DrepNews.xcdatamodeld */ = {
+		C533F19A1A27720700584E5B /* EventPilot.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C533F15F1A276DFC00584E5B /* DrepNews.xcdatamodel */,
+				C533F19B1A27720700584E5B /* EventPilot.xcdatamodel */,
 			);
-			currentVersion = C533F15F1A276DFC00584E5B /* DrepNews.xcdatamodel */;
-			path = DrepNews.xcdatamodeld;
+			currentVersion = C533F19B1A27720700584E5B /* EventPilot.xcdatamodel */;
+			path = EventPilot.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
