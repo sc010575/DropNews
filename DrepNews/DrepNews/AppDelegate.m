@@ -7,16 +7,39 @@
 //
 
 #import "AppDelegate.h"
+#import "Dropbox.h"
+#import "OAuthLoginViewController.h"
+#import "DAResultResponse.h"
+#import "DADownloadService.h"
+
+
+NSString * const Event_Info_Base_URL = @"https://api-content.dropbox.com/1/files/dropbox//EventPilot/document.json";
+
 
 @interface AppDelegate ()
 
 @end
 
+
 @implementation AppDelegate
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:accessToken];
+    
+    NSString *controllerId = token ? @"dropNews" : @"Login";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
+    
+    // always assumes token is valid - should probably check in a real app
+    if (token) {
+        [self requestForDownLoad];
+        [self.window setRootViewController:initViewController];
+    } else {
+        [(UINavigationController *)self.window.rootViewController pushViewController:initViewController animated:NO];
+    }
     return YES;
 }
 
@@ -123,5 +146,71 @@
         }
     }
 }
+
+#pragma mark - OAuth login flow and url scheme handling
+
+-(BOOL)application:(UIApplication *)application
+           openURL:(NSURL *)url
+ sourceApplication:(NSString *)sourceApplication
+        annotation:(id)annotation
+{
+    if ([[url scheme] isEqualToString:@"drepnews"]) {
+        [self exchangeRequestTokenForAccessToken];
+    }
+    return NO;
+}
+
+- (void)exchangeRequestTokenForAccessToken
+{
+    // OAUTH Step 3 - exchange request token for user access token
+    [Dropbox exchangeTokenForUserAccessTokenURLWithCompletionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
+        if (!error) {
+            NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*) response;
+            if (httpResp.statusCode == 200) {
+                
+                
+                NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSDictionary *accessTokenDict = [Dropbox dictionaryFromOAuthResponseString:response];
+                
+                [[NSUserDefaults standardUserDefaults] setObject:accessTokenDict[oauthTokenKey] forKey:accessToken];
+                [[NSUserDefaults standardUserDefaults] setObject:accessTokenDict[oauthTokenKeySecret] forKey:accessTokenSecret];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                
+                
+                //REquest for download Json File
+                [self requestForDownLoad];
+                
+                
+                // now load main part of application
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    NSString *segueId = @"evenDetails";
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    UITabBarController *initViewController = [storyboard instantiateViewControllerWithIdentifier:segueId];
+                    
+                    UINavigationController *nav = (UINavigationController *) self.window.rootViewController;
+                    nav.navigationBar.hidden = YES;
+                    [nav pushViewController:initViewController animated:NO];
+                });
+                
+            } else {
+                // HANDLE BAD RESPONSE //
+                NSLog(@"exchange request for access token unexpected response %@",
+                      [NSHTTPURLResponse localizedStringForStatusCode:httpResp.statusCode]);
+            }
+        } else {
+            // ALWAYS HANDLE ERRORS :-] //
+        }
+    }];
+}
+
+#pragma mark - Download request
+
+-(void) requestForDownLoad
+{
+    DAResultResponse * request = [[DAResultResponse alloc] initWithRequestID:@"location" andURL:Event_Info_Base_URL];
+    [[DADownloadService shared] requestForADownload:request];
+}
+
 
 @end

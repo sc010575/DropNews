@@ -23,6 +23,12 @@
 		C533F1B71A2773C300584E5B /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1B61A2773C300584E5B /* Coordinates.m */; };
 		C533F1BA1A2773C300584E5B /* EventImages.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1B91A2773C300584E5B /* EventImages.m */; };
 		C533F1BD1A2773C300584E5B /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1BC1A2773C300584E5B /* Event.m */; };
+		C533F1CE1A288F8F00584E5B /* DADownloadService.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1C91A288F8F00584E5B /* DADownloadService.m */; };
+		C533F1CF1A288F8F00584E5B /* DAImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1CB1A288F8F00584E5B /* DAImageDownloader.m */; };
+		C533F1D01A288F8F00584E5B /* DAResultResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C533F1CD1A288F8F00584E5B /* DAResultResponse.m */; };
+		C59D73831A28D8A10047707A /* DAEventParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D73821A28D8A10047707A /* DAEventParseOperation.m */; };
+		C59D738D1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D738C1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m */; };
+		C59D73901A2B69A60047707A /* CoreDataErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D738F1A2B69A60047707A /* CoreDataErrorHandling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,19 @@
 		C533F1B91A2773C300584E5B /* EventImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventImages.m; sourceTree = "<group>"; };
 		C533F1BB1A2773C300584E5B /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		C533F1BC1A2773C300584E5B /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		C533F1C81A288F8F00584E5B /* DADownloadService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADownloadService.h; sourceTree = "<group>"; };
+		C533F1C91A288F8F00584E5B /* DADownloadService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADownloadService.m; sourceTree = "<group>"; };
+		C533F1CA1A288F8F00584E5B /* DAImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAImageDownloader.h; sourceTree = "<group>"; };
+		C533F1CB1A288F8F00584E5B /* DAImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAImageDownloader.m; sourceTree = "<group>"; };
+		C533F1CC1A288F8F00584E5B /* DAResultResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAResultResponse.h; sourceTree = "<group>"; };
+		C533F1CD1A288F8F00584E5B /* DAResultResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAResultResponse.m; sourceTree = "<group>"; };
+		C54213401A2898330004BCDD /* DropNews-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DropNews-PrefixHeader.pch"; sourceTree = "<group>"; };
+		C59D73811A28D8A10047707A /* DAEventParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DAEventParseOperation.h; path = Model/DAEventParseOperation.h; sourceTree = "<group>"; };
+		C59D73821A28D8A10047707A /* DAEventParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DAEventParseOperation.m; path = Model/DAEventParseOperation.m; sourceTree = "<group>"; };
+		C59D738B1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+CoreDataHandler.h"; sourceTree = "<group>"; };
+		C59D738C1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CoreDataHandler.m"; sourceTree = "<group>"; };
+		C59D738E1A2B69A60047707A /* CoreDataErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataErrorHandling.h; sourceTree = "<group>"; };
+		C59D738F1A2B69A60047707A /* CoreDataErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataErrorHandling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,14 +125,15 @@
 		C533F1561A276DFC00584E5B /* DrepNews */ = {
 			isa = PBXGroup;
 			children = (
+				C59D738A1A2A0C3F0047707A /* CoreDataHandler */,
+				C59D73851A28D8E90047707A /* Display */,
+				C59D73841A28D8BF0047707A /* Parser */,
+				C533F1C71A288F8F00584E5B /* DownloadService */,
 				C533F1801A27720700584E5B /* DropBox */,
 				C533F1851A27720700584E5B /* Model */,
 				C533F19E1A27720700584E5B /* ResourceLoader */,
 				C533F15B1A276DFC00584E5B /* AppDelegate.h */,
 				C533F15C1A276DFC00584E5B /* AppDelegate.m */,
-				C533F1611A276DFC00584E5B /* ViewController.h */,
-				C533F1621A276DFC00584E5B /* ViewController.m */,
-				C533F1641A276DFC00584E5B /* Main.storyboard */,
 				C533F1671A276DFC00584E5B /* Images.xcassets */,
 				C533F1691A276DFC00584E5B /* LaunchScreen.xib */,
 				C533F1571A276DFC00584E5B /* Supporting Files */,
@@ -126,6 +146,7 @@
 			children = (
 				C533F1581A276DFC00584E5B /* Info.plist */,
 				C533F1591A276DFC00584E5B /* main.m */,
+				C54213401A2898330004BCDD /* DropNews-PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -182,6 +203,49 @@
 				C533F1A11A27720700584E5B /* document.json */,
 			);
 			path = ResourceLoader;
+			sourceTree = "<group>";
+		};
+		C533F1C71A288F8F00584E5B /* DownloadService */ = {
+			isa = PBXGroup;
+			children = (
+				C533F1C81A288F8F00584E5B /* DADownloadService.h */,
+				C533F1C91A288F8F00584E5B /* DADownloadService.m */,
+				C533F1CA1A288F8F00584E5B /* DAImageDownloader.h */,
+				C533F1CB1A288F8F00584E5B /* DAImageDownloader.m */,
+				C533F1CC1A288F8F00584E5B /* DAResultResponse.h */,
+				C533F1CD1A288F8F00584E5B /* DAResultResponse.m */,
+			);
+			path = DownloadService;
+			sourceTree = "<group>";
+		};
+		C59D73841A28D8BF0047707A /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				C59D73811A28D8A10047707A /* DAEventParseOperation.h */,
+				C59D73821A28D8A10047707A /* DAEventParseOperation.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		C59D73851A28D8E90047707A /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				C533F1641A276DFC00584E5B /* Main.storyboard */,
+				C533F1611A276DFC00584E5B /* ViewController.h */,
+				C533F1621A276DFC00584E5B /* ViewController.m */,
+			);
+			name = Display;
+			sourceTree = "<group>";
+		};
+		C59D738A1A2A0C3F0047707A /* CoreDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				C59D738B1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.h */,
+				C59D738C1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m */,
+				C59D738E1A2B69A60047707A /* CoreDataErrorHandling.h */,
+				C59D738F1A2B69A60047707A /* CoreDataErrorHandling.m */,
+			);
+			path = CoreDataHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,12 +351,18 @@
 			files = (
 				C533F1BD1A2773C300584E5B /* Event.m in Sources */,
 				C533F15D1A276DFC00584E5B /* AppDelegate.m in Sources */,
+				C59D73901A2B69A60047707A /* CoreDataErrorHandling.m in Sources */,
 				C533F1631A276DFC00584E5B /* ViewController.m in Sources */,
+				C533F1CF1A288F8F00584E5B /* DAImageDownloader.m in Sources */,
 				C533F1AE1A27720700584E5B /* EventPilot.xcdatamodeld in Sources */,
+				C59D73831A28D8A10047707A /* DAEventParseOperation.m in Sources */,
 				C533F1B71A2773C300584E5B /* Coordinates.m in Sources */,
+				C59D738D1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m in Sources */,
 				C533F1BA1A2773C300584E5B /* EventImages.m in Sources */,
 				C533F1A21A27720700584E5B /* Dropbox.m in Sources */,
 				C533F1B01A27720700584E5B /* DAResourceLoader.m in Sources */,
+				C533F1CE1A288F8F00584E5B /* DADownloadService.m in Sources */,
+				C533F1D01A288F8F00584E5B /* DAResultResponse.m in Sources */,
 				C533F1B41A2773C200584E5B /* Categories.m in Sources */,
 				C533F1A31A27720700584E5B /* OAuthLoginViewController.m in Sources */,
 				C533F15A1A276DFC00584E5B /* main.m in Sources */,
@@ -419,6 +489,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/DropNews-PrefixHeader.pch";
 				INFOPLIST_FILE = DrepNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -429,6 +503,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/DropNews-PrefixHeader.pch";
 				INFOPLIST_FILE = DrepNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +566,7 @@
 				C533F17C1A276DFC00584E5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C533F17D1A276DFC00584E5B /* Build configuration list for PBXNativeTarget "DrepNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +575,7 @@
 				C533F17F1A276DFC00584E5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

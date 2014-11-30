@@ -1,0 +1,21 @@
+//
+//  DropNews-PrefixHeader.pch
+//  DrepNews
+//
+//  Created by Suman Chatterjee on 28/11/2014.
+//  Copyright (c) 2014 Suman Chatterjee. All rights reserved.
+//
+
+#ifndef DrepNews_DropNews_PrefixHeader_pch
+#define DrepNews_DropNews_PrefixHeader_pch
+
+#import <Availability.h>
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#endif
+
+#endif

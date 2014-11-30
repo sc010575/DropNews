@@ -24,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.navigationController.navigationBarHidden = YES;    
 }
 
 
@@ -65,7 +65,7 @@
                 [[NSUserDefaults standardUserDefaults] synchronize];
                
                 
-                NSString *authorizationURLWithParams = [NSString stringWithFormat:@"https://www.dropbox.com/1/oauth/authorize?oauth_token=%@&oauth_callback=eventpilot://userauthorization",oauthDict[oauthTokenKey]];
+                NSString *authorizationURLWithParams = [NSString stringWithFormat:@"https://www.dropbox.com/1/oauth/authorize?oauth_token=%@&oauth_callback=drepnews://userauthorization",oauthDict[oauthTokenKey]];
                 
                 // escape codes
                 NSString *escapedURL = [authorizationURLWithParams stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

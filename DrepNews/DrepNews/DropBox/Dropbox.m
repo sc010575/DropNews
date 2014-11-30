@@ -8,8 +8,8 @@
 
 #import "Dropbox.h"
 
-static NSString *apiKey = @"v7l8mrs0p57fyrd"; //v7l8mrs0p57fyrd
-static NSString *appSecret = @"thxwjtiepd6iy0h"; //thxwjtiepd6iy0h
+static NSString *apiKey = @"b7772s8f0dqd5pa"; //v7l8mrs0p57fyrd
+static NSString *appSecret = @"1gqknuf8t30s1ta"; //thxwjtiepd6iy0h
 
 NSString * const appFolder = @"EventPilot";
 

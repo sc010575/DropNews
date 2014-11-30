@@ -13,7 +13,7 @@
 #import "Coordinates.h"
 #import "EventImages.h"
 #import "DAImageDownloader.h"
-#import <KCOrderedAccessorFix/NSManagedObjectModel+KCOrderedAccessorFix.h>
+#import "NSManagedObject+CoreDataHandler.h"
 
 @interface DAEventParseOperation()
 
@@ -27,12 +27,12 @@
 - (void)main {
     
     // Creating context in main function here make sure the context is tied to current thread.
-    [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
+/*    [MagicalRecord saveUsingCurrentThreadContextWithBlock:^(NSManagedObjectContext *localContext) {
         [self parseEventWithContext:localContext];
     } completion:nil
     ];
 
-    
+    */
 }
 
 
@@ -51,7 +51,7 @@
 -(BOOL) isThisEventIsNew:(NSString*) eventName inContext:(NSManagedObjectContext*) context
 {
     NSPredicate *purchasePredicate = [NSPredicate predicateWithFormat:@"name == %@", eventName];
-    Event * event = [[Event MR_findAllWithPredicate:purchasePredicate inContext:context]  firstObject];
+    Event * event = [[Event findAllWithPredicate:purchasePredicate inContext:context]  firstObject];
     return  (!event) ? YES:NO;
 
 }
@@ -61,7 +61,7 @@
     if([self isThisEventIsNew:eventData[@"name"] inContext:context]){
         
         //OK new event add it to the database
-        __block Event *event = [Event MR_createInContext:context];
+        __block Event *event = [Event createInContext:context];
         event.event_Id = eventData[@"id"];
         event.name = eventData[@"name"];
         event.postalCode = eventData[@"postcode"];
@@ -86,17 +86,28 @@
         NSArray * categoryArray = eventData[@"categories"];
         for (NSString * categoryName in categoryArray)
         {
-            Categories * categories = [Categories MR_createInContext:context];
+            Categories * categories = [Categories createInContext:context];
             categories.categoryName = categoryName;
             [event addCategoryObject:categories];
         }
         
         //Add Coordinate
         NSDictionary * cordDict = eventData[@"coordinate"];
-        Coordinates * coordinates = [Coordinates MR_createInContext:context];
+        Coordinates * coordinates = [Coordinates createInContext:context];
         coordinates.longitude = cordDict[@"longitude"];
         coordinates.latitude  = cordDict[@"latitude"];
         event.coordinate = coordinates;
+    
+    // Commit the change.
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+
         
 //        //store event Images
 //        NSArray *eventImageArray = eventData[@"event-images"];
@@ -109,41 +120,41 @@
 //        }
         
         //DownLoad ThumbNail
-        event.thambnailImageSaved = NO;
+//        event.thambnailImageSaved = NO;
         NSString* thumbNailUrl = eventData[@"thumbnail"];
         //@weakify(self);
         [DAImageDownloader downLoadThumbNailImage:thumbNailUrl withCompletionBlock:^(UIImage *image) {
            // @strongify(self)
-            [DAEventParseOperation saveThumbNail:image forEvent:event];
+//            [DAEventParseOperation saveThumbNail:image forEvent:event];
         }];
  
         
-    }
+//    }
 }
 
 
-+ (void)saveThumbNail:(UIImage*)image forEvent:(Event*)event
-{
-    //First Find the event from the database
-    
-  //  [MagicalRecord setupCoreDataStackWithInMemoryStore];
-  //  [[NSManagedObjectModel MR_defaultManagedObjectModel] kc_generateOrderedSetAccessors];
-    [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        
-        
-        NSPredicate * Predicate = [NSPredicate predicateWithFormat:@"(name == %@) AND (event_Id == %@)", event.name ,event.event_Id];
-        
-        Event *recentEvent = [[Event MR_findAllWithPredicate:Predicate inContext:localContext]  firstObject];
-        if (!recentEvent) {
-            //no record found
-        }
-        else
-        {
-            recentEvent.thambnail = UIImagePNGRepresentation(image);
-            recentEvent.thambnailImageSaved = YES;
-        }
-    
-    }];
+//+ (void)saveThumbNail:(UIImage*)image forEvent:(Event*)event
+//{
+//    //First Find the event from the database
+//    
+//  //  [MagicalRecord setupCoreDataStackWithInMemoryStore];
+//  //  [[NSManagedObjectModel MR_defaultManagedObjectModel] kc_generateOrderedSetAccessors];
+// //   [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+//        
+//        
+//        NSPredicate * Predicate = [NSPredicate predicateWithFormat:@"(name == %@) AND (event_Id == %@)", event.name ,event.event_Id];
+//        
+//        Event *recentEvent = [[Event findAllWithPredicate:Predicate inContext:localContext]  firstObject];
+//        if (!recentEvent) {
+//            //no record found
+//        }
+//        else
+//        {
+//            recentEvent.thambnail = UIImagePNGRepresentation(image);
+//            recentEvent.thambnailImageSaved = YES;
+//        }
+//    
+//    }];
 
 
 }

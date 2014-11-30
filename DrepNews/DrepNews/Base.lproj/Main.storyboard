@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbH-c2-wn3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="dZE-i4-K85">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bja-5Z-QBY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="TbH-c2-wn3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ypQ-bd-44K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LU5-y3-biV" kind="relationship" relationship="rootViewController" id="Z38-Pf-29i"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1302" y="-493"/>
+        </scene>
+        <!--Auth Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="OAuthLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +31,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVq-5Y-LJa">
+                                <rect key="frame" x="239" y="527" width="122" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="uw0-yI-vR0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                <state key="normal" title="Let's Go !!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DE2-TW-Dsz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWM-hF-UJH">
+                                <rect key="frame" x="30" y="113" width="313" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="313" id="QNc-09-Ibm"/>
+                                </constraints>
+                                <string key="text">Dropbox requires you to authorize DropShare to use your account. Press the button below to be taken to Dropbox's authorization page.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hWM-hF-UJH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="93" id="4Hz-9O-beJ"/>
+                            <constraint firstItem="yVq-5Y-LJa" firstAttribute="top" secondItem="hWM-hF-UJH" secondAttribute="bottom" constant="40" id="56V-lf-wMV"/>
+                            <constraint firstItem="hWM-hF-UJH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MgB-PZ-PDz"/>
+                            <constraint firstItem="yVq-5Y-LJa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cIO-GF-lsG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yVq-5Y-LJa" secondAttribute="bottom" constant="34" id="fa7-J6-37U"/>
+                            <constraint firstItem="hWM-hF-UJH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="kC0-7G-JSm"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="EsN-98-br5"/>
+                    <connections>
+                        <outlet property="loginButton" destination="yVq-5Y-LJa" id="WCE-Sd-fZe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-557" y="-506"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nGS-aa-AH1">
+            <objects>
+                <viewController storyboardIdentifier="dropNews" id="LU5-y3-biV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s1s-g3-yvm"/>
+                        <viewControllerLayoutGuide type="bottom" id="kUT-DM-6Hm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WSw-cK-vuA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xEE-PR-khb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcs-nd-Rwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-930" y="201"/>
         </scene>
     </scenes>
 </document>
