@@ -29,6 +29,8 @@
 		C59D73831A28D8A10047707A /* DAEventParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D73821A28D8A10047707A /* DAEventParseOperation.m */; };
 		C59D738D1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D738C1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m */; };
 		C59D73901A2B69A60047707A /* CoreDataErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D738F1A2B69A60047707A /* CoreDataErrorHandling.m */; };
+		C59D73961A2C81F80047707A /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D73951A2C81F80047707A /* CoreDataHandler.m */; };
+		C59D73991A2C8E280047707A /* NSManagedObjectContext+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D73981A2C8E280047707A /* NSManagedObjectContext+Helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,10 @@
 		C59D738C1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CoreDataHandler.m"; sourceTree = "<group>"; };
 		C59D738E1A2B69A60047707A /* CoreDataErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataErrorHandling.h; sourceTree = "<group>"; };
 		C59D738F1A2B69A60047707A /* CoreDataErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataErrorHandling.m; sourceTree = "<group>"; };
+		C59D73941A2C81F80047707A /* CoreDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHandler.h; sourceTree = "<group>"; };
+		C59D73951A2C81F80047707A /* CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHandler.m; sourceTree = "<group>"; };
+		C59D73971A2C8E280047707A /* NSManagedObjectContext+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Helper.h"; sourceTree = "<group>"; };
+		C59D73981A2C8E280047707A /* NSManagedObjectContext+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Helper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +250,10 @@
 				C59D738C1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m */,
 				C59D738E1A2B69A60047707A /* CoreDataErrorHandling.h */,
 				C59D738F1A2B69A60047707A /* CoreDataErrorHandling.m */,
+				C59D73941A2C81F80047707A /* CoreDataHandler.h */,
+				C59D73951A2C81F80047707A /* CoreDataHandler.m */,
+				C59D73971A2C8E280047707A /* NSManagedObjectContext+Helper.h */,
+				C59D73981A2C8E280047707A /* NSManagedObjectContext+Helper.m */,
 			);
 			path = CoreDataHandler;
 			sourceTree = "<group>";
@@ -356,6 +366,7 @@
 				C533F1CF1A288F8F00584E5B /* DAImageDownloader.m in Sources */,
 				C533F1AE1A27720700584E5B /* EventPilot.xcdatamodeld in Sources */,
 				C59D73831A28D8A10047707A /* DAEventParseOperation.m in Sources */,
+				C59D73961A2C81F80047707A /* CoreDataHandler.m in Sources */,
 				C533F1B71A2773C300584E5B /* Coordinates.m in Sources */,
 				C59D738D1A2A0C3F0047707A /* NSManagedObject+CoreDataHandler.m in Sources */,
 				C533F1BA1A2773C300584E5B /* EventImages.m in Sources */,
@@ -364,6 +375,7 @@
 				C533F1CE1A288F8F00584E5B /* DADownloadService.m in Sources */,
 				C533F1D01A288F8F00584E5B /* DAResultResponse.m in Sources */,
 				C533F1B41A2773C200584E5B /* Categories.m in Sources */,
+				C59D73991A2C8E280047707A /* NSManagedObjectContext+Helper.m in Sources */,
 				C533F1A31A27720700584E5B /* OAuthLoginViewController.m in Sources */,
 				C533F15A1A276DFC00584E5B /* main.m in Sources */,
 			);

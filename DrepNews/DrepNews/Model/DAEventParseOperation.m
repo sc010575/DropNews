@@ -33,6 +33,7 @@
     ];
 
     */
+    [self parseEventWithContext:self.managedObjectContext];
 }
 
 
