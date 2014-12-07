@@ -10,6 +10,8 @@
 
 @implementation NSManagedObjectContext (Helper)
 
+
+
 + (instancetype)managedObjectContextWithName:(NSString *)name {
     NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     managedObjectContext.persistentStoreCoordinator = [self persistentStoreCoordinatorWithName:name];
@@ -17,6 +19,15 @@
     
     return managedObjectContext;
 }
+
++ (instancetype)managedObjectContextWithStoreCoordinator:(NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator;
+    managedObjectContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy;
+    
+    return managedObjectContext;
+}
+
 
 - (void)updateOnBackgroundThread:(NSManagedObjectContextUpdateBlock)updateBlock completion:(NSManagedObjectContextCompletionBlock)completionBlock {
     

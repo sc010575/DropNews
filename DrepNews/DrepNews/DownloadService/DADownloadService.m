@@ -10,6 +10,7 @@
 #import "DAResultResponse.h"
 #import "DAResourceLoader.h"
 #import "DAEventParseOperation.h"
+#import "AppDelegate.h"
 #import "Dropbox.h"
 
 
@@ -108,15 +109,15 @@
         }
         else{
             
+            //Success
             NSData * data = [NSData dataWithContentsOfURL:location];
             
             //parse the file and load it to the database
-            DAEventParseOperation *eventParseOperation = [[DAEventParseOperation alloc] init];
-         //   eventPArseOperation.downloadData = data;
+            AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+            DAEventParseOperation *eventParseOperation = [[DAEventParseOperation alloc] initWithData:data sharedPSC:appDelegate.persistentStoreCoordinator];
             
             //add to the queue
-            
-           // [self.parseQueue addOperation:eventPArseOperation];
+            [self.parseQueue addOperation:eventParseOperation];
         }
         [self update];
         

@@ -2,7 +2,7 @@
 //  Event.m
 //  DrepNews
 //
-//  Created by Suman Chatterjee on 27/11/2014.
+//  Created by Suman Chatterjee on 07/12/2014.
 //  Copyright (c) 2014 Suman Chatterjee. All rights reserved.
 //
 
@@ -22,8 +22,10 @@
 @dynamic thambnail;
 @dynamic timeStamp;
 @dynamic type;
+@dynamic thambnailUrl;
 @dynamic category;
 @dynamic coordinate;
 @dynamic eventimages;
+@synthesize thambnailImageSave;
 
 @end

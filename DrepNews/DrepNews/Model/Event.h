@@ -2,7 +2,7 @@
 //  Event.h
 //  DrepNews
 //
-//  Created by Suman Chatterjee on 27/11/2014.
+//  Created by Suman Chatterjee on 07/12/2014.
 //  Copyright (c) 2014 Suman Chatterjee. All rights reserved.
 //
 
@@ -21,9 +21,12 @@
 @property (nonatomic, retain) NSData * thambnail;
 @property (nonatomic, retain) NSDate * timeStamp;
 @property (nonatomic, retain) NSString * type;
+@property (nonatomic, retain) NSString * thambnailUrl;
 @property (nonatomic, retain) NSSet *category;
 @property (nonatomic, retain) Coordinates *coordinate;
 @property (nonatomic, retain) NSSet *eventimages;
+@property (nonatomic, assign, getter=isThumbNailImageSaved) BOOL thambnailImageSave;
+
 @end
 
 @interface Event (CoreDataGeneratedAccessors)
